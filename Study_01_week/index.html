@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1 Week</title>
+</head>
+<body>
+    <button class="btn01">Common Func Button</button>
+    <button class="btn02">Arrow Func Button</button>
+    <script>
+
+        console.log('@@@@@@@@@@@@@@@[This]@@@@@@@@@@@@@@');
+        // 1. 전역 this
+        console.log('1. 전역에서 this :: ', this);
+        // 2. 일반 함수 this
+        function commonFunc() {
+            console.log('2. 일반 함수 this :: ', this);
+        }
+        commonFunc();
+        // 3. 변수 선언 this
+        let varFunc  = function() {
+            console.log('3. 변수 선언 this :: ', this);
+        };
+        varFunc();
+        // 4. Object 안의 this
+        let objThis = {
+            data : 1,
+            objFunc : function (){
+                console.log('4. Object 안의 Func this ::: ', this);
+            }
+        }
+        objThis.objFunc();
+        // 5. EventListener 안의 this
+        document.querySelector('.btn01').addEventListener('click', function (){
+           console.log('5. EventListener 안의 this ::: ', this)
+        });
+        document.querySelector('.btn01').dispatchEvent(new Event('click'));
+
+
+        console.log('@@@@@@@@@@@@@@@[Arrow Function - This]@@@@@@@@@@@@@@');
+        // 1. Object 안의 Arrow Func this
+        let arrowObjThis = {
+            data : 1,
+            arrowFunc : () => {
+                console.log('1. Object 안의 Arrow Func this ::: ', this);
+            }
+        }
+        arrowObjThis.arrowFunc();
+        // 2. EventListener 안의 Arrow Func this
+        document.querySelector('.btn02').addEventListener('click', () => {
+            console.log('2. EventListener 안의 Arrow Func this ::: ', this)
+        });
+        document.querySelector('.btn02').dispatchEvent(new Event('click'));
+
+    </script>
+</body>
+</html>
