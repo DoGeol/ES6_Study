@@ -118,12 +118,12 @@
         console.log( a + b );
         // result : 3 -> 5
 
-        for ( var i = 0; i < 6; i++ ) {
-            setTimeout( function () { console.log('var ::: ', i); }, i*10 );
-        }
-        for ( let i = 0; i < 6; i++ ) {
-            setTimeout( function () { console.log('let ::: ', i); }, i*10 );
-        }
+        // for ( var i = 0; i < 6; i++ ) {
+        //     setTimeout( function () { console.log('var ::: ', i); }, i*10 );
+        // }
+        // for ( let i = 0; i < 6; i++ ) {
+        //     setTimeout( function () { console.log('let ::: ', i); }, i*10 );
+        // }
 
         // tagged literal
         console.log('@@@@@@@@@@@@@@@@ Tagged literal');
@@ -144,6 +144,36 @@
             console.log(text[0] + val[1] + text[1] + val[0]);
         }
         textSpliter2`바지${pants} 양말${socks}`;
+
+        console.log('@@@@@@@@@@@@@@@@ spread operator');
+        // spread operator
+        let array = ['hello', 'world'];
+        console.log(...array);    // result : 'hello world';
+        console.log(...array[0]); // result : 'h' 'e' 'l' 'l' 'o';
+
+        let array1 = array        // Reference Copy
+        let array2 = [...array]   // Deap Copy
+
+        array1[2] = 'welcome';
+
+        console.log(array);       // result : ['hello', 'world', 'welcome']
+        console.log(array1);      // result : ['hello', 'world', 'welcome']
+        console.log(array2);      // result : ['hello', 'world']
+
+        let obj = {
+            a : 1,
+            b : 2
+        }
+
+        let obj1 = obj                   // Reference Copy
+        let obj2 = {c : 3, ...obj}       // Deap Copy
+
+        obj1.c = 5;
+
+        console.log(obj);                // result : {a: 1, b: 2, c: 5}
+        console.log(obj1);               // result : {a: 1, b: 2, c: 5}
+        console.log(obj2);               // result : {c: 3, a: 1, b: 2}
+
     </script>
 </body>
 </html>

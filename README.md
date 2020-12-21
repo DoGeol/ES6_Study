@@ -69,3 +69,41 @@
         console.log(var);   // array type : ["손흥민", "축구선수"]
       }
       ```
+     
+## 4. Spread Operator
+* 쉽게 말하면 중괄호, 대괄호를 없애주는 역할  
+* Deep Copy에 유용하게 쓰임 
+  ```
+  let array = ['hello', 'world'];
+  console.log(...array);    // result : 'hello world';
+  console.log(...array[0]); // result : 'h' 'e' 'l' 'l' 'o';
+  
+  let array1 = array        // Reference Copy
+  let array2 = [...array]   // Deap Copy
+  
+  array1[2] = 'welcome';
+   
+  console.log(array);       // result : ['hello', 'world', 'welcome']           
+  console.log(array1);      // result : ['hello', 'world', 'welcome']
+  console.log(array2);      // result : ['hello', 'world']
+        
+  let obj = {
+    a : 1,
+    b : 2
+  }
+  
+  // 객체타입도 동일
+  let obj = {
+      a : 1,
+      b : 2
+  }
+  
+  let obj1 = obj                   // Reference Copy
+  let obj2 = {c : 3, ...obj}       // Deap Copy
+  
+  obj1.c = 5;
+  
+  console.log(obj);                // result : {a: 1, b: 2, c: 5}
+  console.log(obj1);               // result : {a: 1, b: 2, c: 5}
+  console.log(obj2);               // result : {c: 3, a: 1, b: 2}
+  ```
