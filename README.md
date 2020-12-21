@@ -107,3 +107,15 @@
   console.log(obj1);               // result : {a: 1, b: 2, c: 5}
   console.log(obj2);               // result : {c: 3, a: 1, b: 2}
   ```
+* 함수의 파라미터 간소화
+  ```
+  let calArray = [1,2,3]
+  
+  function cal_add(a,b,c) {
+    console.log(a+b+c);
+  }
+  
+  // SAME
+  cal_add(calArray[0],calArray[1],calArray[2]);
+  cal_add(...calArray);
+  ```
