@@ -63,7 +63,7 @@
 
         var 자료 = {
             data : [1,2,3,4,5]
-        }˚
+        }
         자료['전부더하기'] = function (){
             var cnt = 0;
             this.data.forEach(function (val){
@@ -86,6 +86,64 @@
             }, 1000 );
         });
 
+    </script>
+    <script>
+        // 2020.12.21
+        // 테스트함수1();
+        function 테스트함수1 () {
+            console.log('테스트함수1 : ', 안녕1);
+            let 안녕1 = 'Hello!';
+        }
+        // result : Hello! -> initialize error
+
+        // 테스트함수2();
+        var 테스트함수2 = function () {
+            console.log('테스트함수2 : ', 안녕2);
+            let 안녕2 = 'Hello!';
+        }
+        // result : none! -> initialize error
+
+        let test3 = 1;
+        var 테스트함수3 = function () {
+            test3 = 2;
+        }
+        console.log('테스트함수3 : ', test3);
+        // result : 1 -> 1
+
+        let a = 1;
+        var b = 2;
+        window.a = 3;
+        window.b = 4;
+
+        console.log( a + b );
+        // result : 3 -> 5
+
+        for ( var i = 0; i < 6; i++ ) {
+            setTimeout( function () { console.log('var ::: ', i); }, i*10 );
+        }
+        for ( let i = 0; i < 6; i++ ) {
+            setTimeout( function () { console.log('let ::: ', i); }, i*10 );
+        }
+
+        // tagged literal
+        console.log('@@@@@@@@@@@@@@@@ Tagged literal');
+        let tagged_name = '손흥민';
+        let tagged_job = '축구선수';
+        let tagged_text = `안녕하세요, ${tagged_name} 입니다.
+                           저의 직업은 ${tagged_job} 입니다.`;
+        function textSpliter( text, val, val2 ) {
+            console.log(text);
+            console.log(val);
+            console.log(val2);
+        }
+        textSpliter`안녕하세요, ${tagged_name} 입니다. 저의 직업은 ${tagged_job} 입니다.`;
+
+        let [pants, socks] = [20, 100];
+        function textSpliter2(text, ...val) {
+            console.log('...val : ', val )
+            console.log(text[0] + val[1] + text[1] + val[0]);
+        }
+        textSpliter2`바지${pants} 양말${socks}`;
     </script>
 </body>
 </html>
