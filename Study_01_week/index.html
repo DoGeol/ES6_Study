@@ -52,6 +52,40 @@
         });
         document.querySelector('.btn02').dispatchEvent(new Event('click'));
 
+        var 사람 = {
+            name: '손흥민',
+            sayHi : function () {
+                console.log( '안녕 나는 ' + this.name );
+                console.log( `안녕 나는 ${this.name}`);
+            }
+        }
+        사람.sayHi();
+
+        var 자료 = {
+            data : [1,2,3,4,5]
+        }˚
+        자료['전부더하기'] = function (){
+            var cnt = 0;
+            this.data.forEach(function (val){
+                cnt += val;
+            })
+            console.log(cnt);
+        }
+        자료.전부더하기();
+
+    </script>
+
+    <button id="버튼">버튼이에요</button>
+
+    <script>
+
+        document.getElementById('버튼').addEventListener('click', function(){
+            // console.log(this.innerHTML)
+            setTimeout( () => {
+                console.log(this.innerHTML);
+            }, 1000 );
+        });
+
     </script>
 </body>
 </html>
