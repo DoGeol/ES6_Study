@@ -24,5 +24,24 @@
         console.log(var);   // array type : ["손흥민", "축구선수"]
       }
       ```
-      
-     
+## 2020. 12. 23(수요일)
+1. Reference data type  
+   ```
+   // [CASE 1] 
+   var obj = { name : '김' };
+   function changeName( data ) {
+      data.name = 'park'; 
+   } 
+   changeName( obj );
+   console.log( obj.name );         // result : 'park';
+   
+   // [CASE 2]
+   var obj = { name : '김' };k
+   function changeName( data ) {
+      data = { name : 'park' }; 
+   } 
+   changeName( obj );
+   console.log( obj.name );         // result : '김';
+   ```
+   CASE2에서 obj가 변경되지 않는 이유는 함수의 `data = { name : 'park' };` 부분에서 재할당되기 때문에
+   CASE1과는 다르게 할당 주소를 끊고 재할당 해주기 때문에, obj 값이 변경되지 않고 data에 새로운 주소로 name 값이 할당 된다.
