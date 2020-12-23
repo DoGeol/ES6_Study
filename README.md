@@ -164,3 +164,20 @@
     restFunc(1,2,3,4);                      // result : 1 ::: [2,3,4]
     restFunc(4,3,2);                        // result : 4 ::: [3,2]
     ```
+
+## 6. Constructor
+
+* 동일한 형식의 오브젝트(인스턴스)를 반복해서 생성하기 위해 사용  
+    ```
+    function Students(name = 'kim') {
+        this.name = name;
+        this.age = 15;
+        this.sayHi = () => {
+            console.log(`안녕하세요, ${this.name} 입니다. 나이는 ${this.age} 입니다.`);
+        }
+    }
+    let student01 = new Students('park');
+    let student02 = new Students();
+    student01.sayHi();                  // 안녕하세요, park 입니다. 나이는 15 입니다.
+    student02.sayHi();                  // 안녕하세요, kim 입니다. 나이는 15 입니다.
+    ```
