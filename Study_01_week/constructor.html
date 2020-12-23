@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constructor Test</title>
+</head>
+<body>
+<script>
+    function Students(name = 'kim') {
+        this.name = name;
+        this.age = 15;
+        this.sayHi = () => {
+            console.log(`안녕하세요, ${this.name} 입니다. 나이는 ${this.age} 입니다.`);
+        }
+    }
+
+    let student01 = new Students('park');
+    let student02 = new Students();
+    student01.sayHi();
+    student02.sayHi();
+
+    function Product(...data) {
+        this.name = data[0];
+        this.price = data[1];
+        this.부가세 = () => {
+            console.log(`${this.name}의 부가세 : ` + Math.round(this.price / 10));
+        }
+    }
+
+    let pd01 = new Product('shirts', 50000);
+    let pd02 = new Product('pants', 60000);
+    pd01.부가세();
+    pd02.부가세();
+</script>
+</body>
+</html>
