@@ -167,7 +167,7 @@
 
 ## 6. Constructor
 
-* 동일한 형식의 오브젝트(인스턴스)를 반복해서 생성하기 위해 사용  
+* 동일한 형식의 오브젝트(인스턴스)를 반복해서 생성하기 위해 사용
     ```
     function Students(name = 'kim') {
         this.name = name;
@@ -181,3 +181,5 @@
     student01.sayHi();                  // 안녕하세요, park 입니다. 나이는 15 입니다.
     student02.sayHi();                  // 안녕하세요, kim 입니다. 나이는 15 입니다.
     ```
+
+* ES6 Class
