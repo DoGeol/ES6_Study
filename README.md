@@ -183,3 +183,34 @@
     ```
 
 * ES6 Class
+    ```
+    class 부모 {
+        constructor() {
+            this.name = 'Kim'
+        }
+    }
+    var 자식 = new 부모();
+  
+    class 할아버지 {
+        constructor(name) {
+            this.성 = 'Kim';
+            this.이름 = name;
+        }
+        say() {
+            console.log('할아버지다');
+        }
+    }
+    class 아버지 extends 할아버지 {
+        constructor(name) {
+            super(name);                        // 상속받은 constuctor를 가져옴
+        }
+        say() {
+            super.say();                        // constructor 밖에서의 super는 프로토타입 상
+            console.log('아버지다');
+        }
+    }
+    let 할아버지1 = new 할아버지('grand daddy');
+    let 아버지1 = new 아버지('daddy');
+    할아버지1.say();                              // result : 할아버지다.
+    아버지1.say();                               // result : 할아버지다. 아버지다.
+    ```
