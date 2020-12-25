@@ -259,3 +259,26 @@
   
   test(obj);                    // result : name = 'Pyeon', age = 29
   ```
+
+## 8. Import & Export
+
+* JavaScript에서 원하는 변수, 함수, class를 다른 파일로 보낼 수 있음
+    * Export
+        ```
+        var a = 10;
+        var b = 20;
+        export default a;
+        export {a,b};
+        ```
+    * Import
+        ``` 
+        * 기본 import 사용 방법 
+            ex) import test from './js/main.js';
+        
+        * export {a,b} // alias 부여 가능
+            ex) import {a,b} from './js/main.js';
+            ex) import {a as one, b as two} from './js/main.js';
+       
+        * export default와 export를 같이 받고 싶을 땐, 제일 앞의 변수가 default
+            ex) import def, {a,b} from './js/main.js';
+        ```
