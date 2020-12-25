@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring Test</title>
+</head>
+<body>
+<script>
+    // Object 에서 데이터 뽑아서 변수 만들기
+    let info = {
+        body: {
+            height: 190,
+            weight: 70
+        },
+        size: ["상의 Large", "바지 30인치"]
+    };
+
+    // let { height: hBody, weight: wBody } = { ...info.body };
+    // let [ sizeTop, sizeBottom ] = [...info.size];
+
+    let {
+        body: {
+            height: hBody,
+            weight: wBody
+        },
+        size: [ sizeTop, sizeBottom ]
+    } = info;
+    console.log(hBody, wBody, sizeTop, sizeBottom);
+
+
+</script>
+</body>
+</html>

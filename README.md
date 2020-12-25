@@ -214,3 +214,48 @@
     할아버지1.say();                              // result : 할아버지다.
     아버지1.say();                               // result : 할아버지다. 아버지다.
     ```
+
+## 7. Destructuring 문법
+
+* Array
+  ```
+  let [a,b,c] = [2,3,4];        // result : a = 2, b = 3, c = 4;
+  
+  // Default 값을 정해 줄 수 있음
+  let [a,b,c = 10] = [2,3];     // result : a = 2, b = 3, c = 10;
+  
+  // 함수의 파라미터에도 전달 가능
+  function test( [name, age] ){
+    console.log( name );
+    console.log( age );
+  }
+  
+  test( ['Kim', 29] );           // result : name = 'Kim', age = 29
+  ```
+* Object
+  ```
+  let { name, age } = { name : 'Kim', age : 30 };       // result : name = 'Kim', age = 30
+  
+  // Default 값을 정해 줄 수 있음
+  let { name, age = 32 } = { name : 'Min' };            // result : name = 'Min', age = 32
+  
+  // 값을 할당 하는 변수명을 변경 해 줄 수 있음 
+  let { name : 이름 , age = 32 } = { name : 'Kim' };     // result : name = undefined, 이름 = 'Kim', age = 32
+  
+  // 반대로 객체에 할당 가능
+  let name = 'Pyeon';
+  let age = 29;
+  let obj = { name, age };      // result : obj.name = 'Pyeon', obj.age = 29
+  
+  // 함수의 파라미터에도 전달 가능
+  let name = 'Pyeon';
+  let age = 29;
+  let obj = { name, age };
+  
+  function test( { name, age } ){
+    console.log( name );
+    console.log( age );
+  }
+  
+  test(obj);                    // result : name = 'Pyeon', age = 29
+  ```
