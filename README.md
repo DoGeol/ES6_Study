@@ -259,3 +259,37 @@
   
   test(obj);                    // result : name = 'Pyeon', age = 29
   ```
+
+## 8. Import & Export
+
+* JavaScript에서 원하는 변수, 함수, class를 다른 파일로 보낼 수 있음
+    * Export
+        ```
+        var a = 10;
+        var b = 20;
+        export default a;
+        export {a,b};
+        ```
+    * Import
+        ``` 
+        * 기본 import 사용 방법 
+            ex) import test from './js/main.js';
+        
+        * export {a,b} // alias 부여 가능
+            ex) import {a,b} from './js/main.js';
+            ex) import {a as one, b as two} from './js/main.js';
+       
+        * export default와 export를 같이 받고 싶을 땐, 제일 앞의 변수가 default
+            ex) import def, {a,b} from './js/main.js';
+        ```
+
+## 9. Promise
+
+* 콜백함수 디자인 패턴의 복잡함을 해결하기 위한 또 다른 디자인 패턴
+    1. 직관적이고 명시적인 코드
+    2. 실패 했을 때 실행되는 코드를 작성 할 수 있음 -- then(), catch()
+* 동기를 무조건 비동기로 변경해주는 것이 아니다.
+* 성공/대기/실패 판정 상태를 확인 할 수 있다.
+    1. 성공 : resolved
+    2. 실패 : rejected
+    3. 대기 : pending

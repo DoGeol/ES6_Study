@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Import And Export</title>
+</head>
+<body>
+    <!--    <script src="./js/main.js"></script>-->
+    <script type="module">
+        // Standard
+        import main from './js/main.js';
+        console.log('1. standard ::: ', main);
+
+        // 변수명 변경 가능
+        import test from './js/main.js';
+        console.log('2. 변수명 변경 가능 ::: ', test);
+
+        // export로 내보낸 것은 기본적으로 변수명을 맞춰주어야 함 (default 제외)
+        console.log('3. export로 내보낸 것은 기본적으로 변수명을 맞춰주어야 함')
+            // 1. 변수명을 동일하게 맞춘 경우
+            import {a, b} from './js/main.js';
+            console.log('3-1 변수명을 동일하게 맞춘 경우 ::: ',  a, b);
+
+            // 2. 변수명을 변경하고 싶을 때
+            import {a as one, b as two} from './js/main.js';
+            console.log('3-2 변수명을 변경하고 싶을 때 ::: ',  one, two);
+
+        // export default와 export를 같이 받고 싶을 땐, 제일 앞의 변수가 default
+        import def, {a as c, b as d} from './js/main.js';
+        console.log('4. export default와 export를 같이 받고 싶을 땐, 제일 앞의 변수가 default ::: ',  def, c, d);
+
+        // 전체를 배열로 받아오고 싶을 때
+        import * as total from './js/main.js';
+        console.log('5. 전체를 객체로 받아오고 싶을 때 ::: ', total);
+
+    </script>
+</body>
+</html>
