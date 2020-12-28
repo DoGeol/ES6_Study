@@ -303,5 +303,42 @@
         * 다만 Promise.reject()를 return에 담아 넘겨 줄 순 있음
 * Await
     1. Async 안에서 사용되면 then 대신 사용 가능
-    2. await에서 Promise 실패(reject)가 발생하면 에러 발생하여 멈춤
+    2. await에서 Promise 실패(reject)가 발생하면 에러 발생하여 멈춤  
        -> try-catch를 사용하여 처리
+
+## 11. Map
+
+* Key, Value를 맵핑하는 자료형
+* 자료간의 연관성을 표현할 때 사용
+* Object와 다른 점
+    1. key값으로 모든 자료형 가능
+       ```
+       let person = new Map();
+       person.set('age', 20);
+       
+       person.get('age'); //자료 꺼내는 법
+       person.delete('age'); //자료 삭제하는 법
+       person.size; //자료 몇갠지 알려줌
+       
+       //Map자료 반복문 돌리기
+       for (var key of person.keys() ){
+       console.log(key)
+       }
+       
+       //자료를 직접 집어넣고 싶으면
+       
+       var person = new Map([
+       ['age', 20],
+       ['name', 'Kim']
+       ]);
+       ```
+
+## 12. Set
+
+* Array와 유사한 자료형
+* 중복 자료를 허용하지 않음
+    ```
+    let 출석부 = [ 'john' , 'tom', 'andy', 'tom' ];
+    let 출석부2 = new Set(출석부); //Array를 Set으로 바꾸기
+    출석부 = [...출석부2]  //Set을 Array로 바꾸기
+    ```
