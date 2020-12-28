@@ -293,3 +293,15 @@
     1. 성공 : resolved
     2. 실패 : rejected
     3. 대기 : pending
+
+## 10. Async & Await
+
+* Async
+    1. 함수 앞에서만 사용 가능
+    2. 사용하면 Promise로 반환
+    3. 대신 성공(resolved)만 판단 할 수 있음
+        * 다만 Promise.reject()를 return에 담아 넘겨 줄 순 있음
+* Await
+    1. Async 안에서 사용되면 then 대신 사용 가능
+    2. await에서 Promise 실패(reject)가 발생하면 에러 발생하여 멈춤
+       -> try-catch를 사용하여 처리
